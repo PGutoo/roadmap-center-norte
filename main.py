@@ -1,5 +1,5 @@
 from flask import Flask
-from integration.client_integration import get_customers_by_email, get_store_by_preference
+from integration.client_integration import get_customers_by_email, get_store_by_preference, get_cashback_by_id
 
 app = Flask(__name__)
 
@@ -25,7 +25,7 @@ def preferencias(preferencia):
 @app.route('/cashback/<customer_id>', methods=['GET'])
 def cashback(customer_id):
     try:
-        response = get_store_by_preference(customer_id)
+        response = get_cashback_by_id(customer_id)
         return response
     except Exception as e:
         print(e)
