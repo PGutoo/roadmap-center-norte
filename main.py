@@ -17,6 +17,6 @@ def login_cliente(email):
 def preferencias(preferencia):
     try:
         response = get_store_by_preference(preferencia)
-        return json.response.json()
+        return response
     except Exception as e:
         print(e)
