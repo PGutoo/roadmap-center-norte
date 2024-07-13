@@ -1,11 +1,19 @@
 import logging
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 from integration.client_integration import get_customers_by_email
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Ajuste conforme necessário
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/login/{email}", response_class=JSONResponse)
 def login_cliente(email: str):
