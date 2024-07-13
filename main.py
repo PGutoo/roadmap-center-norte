@@ -15,20 +15,9 @@ def login_cliente(email):
 
 
 @app.route('/login/<preferencia>', methods=['GET'])
-def login_cliente(preferencia):
+def preferencias(preferencia):
     try:
         response = get_customers_by_email(preferencia)
         return response
     except Exception as e:
         print(e)
-
-# @app.route('/roadmap', methods=['GET'])
-# def lambda_handler():
-#     try:
-#         """
-#         TODO
-#         Determinar
-#         """
-#         return get_customers_by_email()
-#     except Exception as e:
-#         print(e)
