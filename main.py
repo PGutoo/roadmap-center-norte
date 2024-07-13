@@ -14,7 +14,7 @@ app.add_middleware(
 )
 
 
-@app.get('/login/{email}')
+@app.get('/login')
 def login_cliente(email):
     try:
         # Agora você pode acessar os dados como um objeto JSON
