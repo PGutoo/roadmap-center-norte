@@ -8,10 +8,9 @@ app = Flask(__name__)
 @app.route('/login/<email>', methods=['GET'])
 def login_cliente(email):
     try:
-        data = request.args['email']
         # Agora você pode acessar os dados como um objeto JSON
         logging.info("Verificando cliente no Clube")
-        response = get_customers_by_email(data)
+        response = get_customers_by_email(email)
         return response
     except Exception as e:
         print(e)
