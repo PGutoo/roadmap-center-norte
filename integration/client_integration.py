@@ -46,3 +46,4 @@ def get_cashback_by_id(customer_id):
         "total": cashback['balance'],
         "total_loja": cashback['transactions']
     }
+
