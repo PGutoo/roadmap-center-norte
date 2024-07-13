@@ -5,7 +5,7 @@ from integration.client_integration import get_customers_by_email
 app = Flask(__name__)
 
 
-@app.route('/login/<email>', methods=['GET'])
+@app.route('/login/<email>')
 def login_cliente(email):
     try:
         logging.info("Verificando cliente no Clube")
