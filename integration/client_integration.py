@@ -30,7 +30,7 @@ def get_store_by_preference(preference):
                 'abertura': loja['openingHours']
             })
     if len(lojas_preferidas) > 0:
-        return json.dumps(lojas_preferidas)
+        return json.loads(lojas_preferidas)
     else:
         return {
             'statusCode': 400,
