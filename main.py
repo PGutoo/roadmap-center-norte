@@ -1,27 +1,24 @@
 import logging
-from fastapi import FastAPI
-
+from flask import Flask, request
 from integration.client_integration import get_customers_by_email
 
-app = FastAPI()
+app = Flask(__name__)
 
 
-@app.get('/login')
-def login_cliente(email):
+@app.route('/login', methods=['GET'])
+def login_cliente():
     try:
         # Agora você pode acessar os dados como um objeto JSON
         logging.info("Verificando cliente no Clube")
-        # response = get_customers_by_email(email)
+        # response = get_customers_by_email(data)
         return {
             'statusCode': 200,
-            'body': email
+            'body': "Hello World"
         }
     except Exception as e:
         print(e)
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
 # @app.route('/roadmap', methods=['GET'])
 # def lambda_handler():
 #     try:
