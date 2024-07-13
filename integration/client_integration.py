@@ -31,5 +31,5 @@ def get_store_by_preference(preference):
         else:
             return {
                 'statusCode': 400,
-                'body': 'Cliente não encontrado'
+                'body': 'Preferência não encontrada'
             }

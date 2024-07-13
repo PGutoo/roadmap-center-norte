@@ -14,10 +14,10 @@ def login_cliente(email):
         print(e)
 
 
-@app.route('/login/<preferencia>', methods=['GET'])
+@app.route('/preferencias/<preferencia>', methods=['GET'])
 def preferencias(preferencia):
     try:
-        response = get_customers_by_email(preferencia)
+        response = get_store_by_preference(preferencia)
         return response
     except Exception as e:
         print(e)
