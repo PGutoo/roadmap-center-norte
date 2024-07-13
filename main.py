@@ -13,7 +13,10 @@ def login_cliente(email: str):
         # Agora você pode acessar os dados como um objeto JSON
         # logging.info("Verificando cliente no Clube")
         # response = get_customers_by_email(email)
-        return "OK"
+        return {
+            "statusCode": 200,
+            "body": "Hello, World!"
+        }
     except Exception as e:
         print(e)
 
