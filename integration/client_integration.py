@@ -2,20 +2,18 @@ import requests
 import os
 
 
-class Integration:
-
-    def get_customers_by_email(self, email):
-        url = f"{os.environ.get('API_URL')}/customers/details"
-        return url
-        # listagem_clientes = requests.get(url)
-        # for cliente in listagem_clientes:
-        #     if email == cliente.get('email'):
-        #         return {
-        #             'nome': cliente.get('firstName'),
-        #             'preferencias': cliente.get('preferences')
-        #         }
-        #     else:
-        #         return {
-        #             'statusCode': 400,
-        #             'body': 'Cliente não encontrado'
-        #         }
+def get_customers_by_email(self, email):
+    listagem_clientes = []
+    url = f"{os.environ.get('API_URL')}/customers/details"
+    listagem_clientes = requests.get(url)
+    for cliente in listagem_clientes:
+        if email == cliente['email']:
+            return {
+                'nome': cliente['email'],
+                'preferencias': cliente['preferences']
+            }
+        else:
+            return {
+                'statusCode': 400,
+                'body': 'Cliente não encontrado'
+            }

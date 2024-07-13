@@ -1,6 +1,6 @@
 import logging
 from flask import Flask, request
-from integration.client_integration import Integration
+from integration.client_integration import get_customers_by_email
 
 app = Flask(__name__)
 
@@ -8,14 +8,10 @@ app = Flask(__name__)
 @app.route('/login/<email>', methods=['GET'])
 def login_cliente(email):
     try:
-        integration = Integration()
-        integration.get_customers_by_email(email)
+        response = get_customers_by_email(email)
         # Agora você pode acessar os dados como um objeto JSON
         # response = get_customers_by_email(email)
-        return {
-            'statusCode': 200,
-            'body': "Hello"
-        }
+        return response
     except Exception as e:
         print(e)
 
