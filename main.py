@@ -6,10 +6,10 @@ app = Flask(__name__)
 
 
 @app.route('/login/<email>', methods=['GET'])
-def lambda_handler(email: str):
+def login_cliente(email: str):
     try:
         logging.info("Verificando cliente no Clube")
-        response = get_customers_by_email(request.view_args['email'])
+        response = get_customers_by_email(request.view_args[email])
         return response
     except Exception as e:
         print(e)
