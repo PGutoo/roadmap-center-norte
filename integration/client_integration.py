@@ -3,10 +3,9 @@ import os
 
 
 def get_customers_by_email(email):
-    listagem_clientes = []
     url = f"{os.environ.get('API_URL')}/customers/details"
     listagem_clientes = requests.get(url)
-    for cliente in listagem_clientes:
+    for cliente in listagem_clientes.json():
         if email == cliente['email']:
             return {
                 'nome': cliente['email'],
