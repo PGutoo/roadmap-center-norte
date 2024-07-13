@@ -9,9 +9,9 @@ app = FastAPI()
 def login_cliente(email: str):
     try:
         # Agora você pode acessar os dados como um objeto JSON
-        logging.info("Verificando cliente no Clube")
-        response = get_customers_by_email(email)
-        return response
+        # logging.info("Verificando cliente no Clube")
+        # response = get_customers_by_email(email)
+        return "OK"
     except Exception as e:
         print(e)
 
