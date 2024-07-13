@@ -9,7 +9,7 @@ app = Flask(__name__)
 def login_cliente(email):
     try:
         # Agora você pode acessar os dados como um objeto JSON
-        response = get_customers_by_email(email)
+        # response = get_customers_by_email(email)
         return {
             'statusCode': 200,
             'body': "Hello"
