@@ -20,3 +20,12 @@ def preferencias(preferencia):
         return response
     except Exception as e:
         print(e)
+
+
+@app.route('/cashback/<customer_id>', methods=['GET'])
+def cashback(customer_id):
+    try:
+        response = get_store_by_preference(customer_id)
+        return response
+    except Exception as e:
+        print(e)

@@ -10,7 +10,8 @@ def get_customers_by_email(email):
         if email == cliente['email']:
             return {
                 'nome': cliente['email'],
-                'preferencias': cliente['preferences']
+                'preferencias': cliente['preferences'],
+                'id': cliente['id']
             }
         else:
             return {
@@ -36,3 +37,14 @@ def get_store_by_preference(preference):
             'statusCode': 400,
             'body': 'Preferência não encontrada'
         }
+
+
+def get_cashback_by_id(customer_id):
+    url = f"{os.environ.get('API_URL')}/wallets/details?customerId={customer_id}"
+    cashback = requests.get(url)
+    cashback.json()
+
+    return {
+        "total": cashback['balance'],
+        "total_loja": cashback['transactions']
+    }
