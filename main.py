@@ -10,7 +10,10 @@ def login_cliente(email):
     try:
         # Agora você pode acessar os dados como um objeto JSON
         response = get_customers_by_email(email)
-        return response
+        return {
+            'statusCode': 200,
+            'body': "Hello"
+        }
     except Exception as e:
         print(e)
 
