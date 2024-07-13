@@ -9,7 +9,7 @@ app = Flask(__name__)
 def login_cliente(email: str):
     try:
         logging.info("Verificando cliente no Clube")
-        response = get_customers_by_email(request.view_args[email])
+        response = get_customers_by_email(request.args['email'])
         return response
     except Exception as e:
         print(e)
