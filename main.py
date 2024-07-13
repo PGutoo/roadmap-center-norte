@@ -1,3 +1,4 @@
+import logging
 from flask import Flask, request
 from integration.client_integration import get_customers_by_email
 
@@ -7,6 +8,7 @@ app = Flask(__name__)
 @app.route('/login/<email>', methods=['GET'])
 def lambda_handler(email: str):
     try:
+        logging.info("Verificando cliente no Clube")
         response = get_customers_by_email(request.view_args['email'])
         return response
     except Exception as e:
