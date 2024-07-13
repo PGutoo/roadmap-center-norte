@@ -2,7 +2,7 @@ import logging
 from fastapi import FastAPI
 from integration.client_integration import get_customers_by_email
 
-app = FastAPI
+app = FastAPI()
 
 
 @app.get("/login/{email}")
