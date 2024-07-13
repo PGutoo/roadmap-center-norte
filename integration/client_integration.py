@@ -21,14 +21,15 @@ def get_customers_by_email(email):
 
 def get_store_by_preference(preference):
     url = f"{os.environ.get('API_URL')}/stores/details"
-    loja_preferidas = []
+    lojas_preferidas = []
     listagem_lojas = requests.get(url)
     for loja in listagem_lojas.json():
         if preference == loja['category']:
-            return json.dumps(loja_preferidas.append({
+            lojas_preferidas = lojas_preferidas.append({
                 'nome': loja['name'],
                 'abertura': loja['openingHours']
-            }))
+            })
+            return lojas_preferidas
         else:
             return {
                 'statusCode': 400,
