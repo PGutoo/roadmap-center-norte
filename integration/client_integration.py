@@ -1,3 +1,5 @@
+from typing import List, Dict
+
 import requests
 import os
 
@@ -18,7 +20,7 @@ def get_customers_by_email(email):
             }
 
 
-def get_store_by_preference(preference):
+def get_store_by_preference(preference) -> dict[str, str | int] | None:
     url = f"{os.environ.get('API_URL')}/stores/details"
     loja_preferidas = []
     listagem_lojas = requests.get(url)
