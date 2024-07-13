@@ -1,4 +1,5 @@
-flask
+Flask
 requests
 fastapi
 uvicorn
+flask_cors
