@@ -9,8 +9,8 @@ app = Flask(__name__)
 def login_cliente(email):
     try:
         # Agora você pode acessar os dados como um objeto JSON
-        # response = get_customers_by_email(email)
-        return email
+        response = get_customers_by_email(email)
+        return response
     except Exception as e:
         print(e)
 

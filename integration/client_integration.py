@@ -2,7 +2,7 @@ import requests
 import os
 
 
-def get_customers_by_email(email: str):
+def get_customers_by_email(email):
     url = f"{os.environ.get('API_URL')}/customers/details"
     listagem_clientes = requests.get(url)
     for cliente in listagem_clientes:
