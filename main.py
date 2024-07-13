@@ -1,5 +1,4 @@
-import logging
-from flask import Flask, request
+from flask import Flask
 from integration.client_integration import get_customers_by_email, get_store_by_preference
 
 app = Flask(__name__)
@@ -18,6 +17,6 @@ def login_cliente(email):
 def preferencias(preferencia):
     try:
         response = get_store_by_preference(preferencia)
-        return response
+        return json.response.json()
     except Exception as e:
         print(e)

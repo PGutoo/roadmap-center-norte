@@ -1,7 +1,6 @@
-from typing import List
-
 import requests
 import os
+import json
 
 
 def get_customers_by_email(email):
@@ -26,11 +25,10 @@ def get_store_by_preference(preference):
     listagem_lojas = requests.get(url)
     for loja in listagem_lojas.json():
         if preference == loja['category']:
-            return "OI"
-            # return loja_preferidas.append({
-            #     'nome': loja['name'],
-            #     'abertura': loja['openingHours']
-            # })
+            return json.dumps(loja_preferidas.append({
+                'nome': loja['name'],
+                'abertura': loja['openingHours']
+            }))
         else:
             return {
                 'statusCode': 400,
