@@ -25,13 +25,14 @@ def get_store_by_preference(preference):
     listagem_lojas = requests.get(url)
     for loja in listagem_lojas.json():
         if preference == loja['category']:
-            lojas_preferidas = lojas_preferidas.append({
+            lojas_preferidas.append({
                 'nome': loja['name'],
                 'abertura': loja['openingHours']
             })
-            return lojas_preferidas
-        else:
-            return {
-                'statusCode': 400,
-                'body': 'Preferência não encontrada'
-            }
+    if len(lojas_preferidas) > 0:
+        return json.dumps(lojas_preferidas)
+    else:
+        return {
+            'statusCode': 400,
+            'body': 'Preferência não encontrada'
+        }
