@@ -5,7 +5,7 @@ from integration.client_integration import get_customers_by_email
 app = FastAPI
 
 
-@app.get(path="/login/{email}", status_code=200)
+@app.get("/login/{email}")
 def login_cliente(email: str):
     try:
         # Agora você pode acessar os dados como um objeto JSON
