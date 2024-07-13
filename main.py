@@ -16,8 +16,6 @@ def login_cliente(email):
         print(e)
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
 # @app.route('/roadmap', methods=['GET'])
 # def lambda_handler():
 #     try:
