@@ -1,5 +1,5 @@
 import logging
-from fastapi import FastAPI
+from fastapi import FastAPI, params
 from integration.client_integration import get_customers_by_email
 
 app = FastAPI()
