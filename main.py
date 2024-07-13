@@ -1,11 +1,13 @@
 import logging
-from fastapi import FastAPI, params
+from fastapi import FastAPI
+from fastapi.responses import JSONResponse
+
 from integration.client_integration import get_customers_by_email
 
 app = FastAPI()
 
 
-@app.get("/login/{email}")
+@app.get("/login/{email}", response_class=JSONResponse)
 def login_cliente(email: str):
     try:
         # Agora você pode acessar os dados como um objeto JSON
