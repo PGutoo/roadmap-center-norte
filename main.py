@@ -4,6 +4,11 @@ from integration.client_integration import get_customers_by_email, get_store_by_
 app = Flask(__name__)
 
 
+@app.route('/status', methods=['GET'])
+def status():
+    return 'OK'
+
+
 @app.route('/login/<email>', methods=['GET'])
 def login_cliente(email):
     try:
@@ -29,3 +34,7 @@ def cashback(customer_id):
         return response
     except Exception as e:
         print(e)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
