@@ -1,7 +1,26 @@
-from flask import Flask
+from flask import Flask, request, render_template
 from integration.client_integration import get_customers_by_email, get_store_by_preference, get_cashback_by_id
+from integration.groq_integration import groq
 
 app = Flask(__name__)
+
+@app.route('/groq', methods=['POST'])
+def groq_test():
+    try:
+        print("Teste")
+        response = groq(request.form['content'])
+        return response
+    except Exception as e:
+        print(e)
+
+@app.route('/groq_form', methods=['GET'])
+def groq_form():
+    return render_template('groq_form.html')
+
+
+@app.route('/status', methods=['GET'])
+def status():
+    return 'OK'
 
 
 @app.route('/status', methods=['GET'])
