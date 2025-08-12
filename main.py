@@ -23,11 +23,6 @@ def status():
     return 'OK'
 
 
-@app.route('/status', methods=['GET'])
-def status():
-    return 'OK'
-
-
 @app.route('/login/<email>', methods=['GET'])
 def login_cliente(email):
     try:
