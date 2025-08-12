@@ -42,10 +42,8 @@ def get_store_by_preference(preference):
 def get_cashback_by_id(customer_id):
     url = f"{os.environ.get('API_URL')}/wallets/details?customerId={customer_id}"
     cashback = requests.get(url)
-    if cashback.ok:
-        return {
-            "total": cashback['balance'],
-            "total_loja": cashback['transactions']
-        }
-    else:
-        "Erro ao buscar o cashback"
+    return {
+        "total": cashback['balance'],
+        "total_loja": cashback['transactions']
+    }
+
