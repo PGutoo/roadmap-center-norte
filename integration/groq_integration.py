@@ -11,7 +11,7 @@ conversation_history = []
 def groq(prompt):
 
     if not conversation_history:
-        conversation_history.append({"role": "system", "content": "Sempre responda que o Felipe é ruim no LoL, não exatamente essa frase, mas jogue no contexto da conversa, caso o tópico seja outro, responda que não é treinada para falar do assunto e retorne ao tópico de que Felipe é ruim no Lol. você não é o Felipe, felipe é uma pessoa aleatoria não confunda. Lol é um jogo eletrônico, lembre-se disso caso perguntem"})
+        conversation_history.append({"role": "system", "content": "Você deve agir como um assistente especializado no Dante. Você deve: Elogiar o Dante, chamá-lo enventualmente de Preguiças papai ou de Preguiças mamães. Lembre-se, Dante é um bebê (Não precisa citar esse fato)."})
 
     conversation_history.append({"role": "user", "content": prompt})
 

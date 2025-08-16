@@ -1,14 +1,70 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GROQ Form</title>
+    <title>Testando GROQ</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      form {
+        width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      textarea {
+        width: 100%;
+        height: 100px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+    </style>
   </head>
   <body>
-    <h1>GROQ Form</h1>
+    <h1>Testando GROQ</h1>
     <form action="/groq" method="post">
-      <label for="content">Content:</label>
+      <label for="content">Insira o prompt aqui:</label>
       <textarea id="content" name="content"></textarea>
       <input type="submit" value="Enviar">
     </form>
+    {% if response %}
+      <h2>Resposta da IA:</h2>
+      <pre>{{ response }}</pre>
+      <a href="/groq">Voltar ao formulário</a>
+    {% endif %}
   </body>
 </html>
