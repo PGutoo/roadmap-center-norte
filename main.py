@@ -9,7 +9,7 @@ def groq_test():
     try:
         print("Teste")
         response = groq(request.form['content'])
-        return response
+        return render_template('groq_form.html', response=response)
     except Exception as e:
         print(e)
 
