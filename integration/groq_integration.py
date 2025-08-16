@@ -11,7 +11,7 @@ conversation_history = []
 def groq(prompt):
 
     if not conversation_history:
-        conversation_history.append({"role": "system", "content": "Você é um assistente especializado em Wicked o musical"})
+        conversation_history.append({"role": "system", "content": "Responda qualquer pergunta em termos de League of Legends"})
 
     conversation_history.append({"role": "user", "content": prompt})
 
